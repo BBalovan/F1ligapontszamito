@@ -15,13 +15,14 @@ namespace F1ligapontszamito
         {
             InitializeComponent();
             // FIGYELEM
-            // A kódban idézetek találhatóak az Argo c. magyar filmből. Itt-ott trágár szavakkal!!
+            // A kódban idézetek találhatóak az Argo c. magyar filmből. Itt-ott trágár szavakkal, baráti társaságnak készült program!
 
         }
 
         int pointsDriverQual;
         int pointsDriver2Qual;
         int pointsEngineQual;
+        int pointsEngine2ndQual;
         int pointsChasseeQual;
         int pointsCrewQual;
         int pointsDriverRace;
@@ -29,6 +30,8 @@ namespace F1ligapontszamito
         int pointsEngineRace;
         int pointsChasseeRace;
         int pointsCrewRace;
+        string message = "Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!";
+        string szamokat124Ker = "Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!";
 
         private void btnDeleteDatas_Click(object sender, EventArgs e)
         {
@@ -69,7 +72,7 @@ namespace F1ligapontszamito
                 if (res == false)
                 {
 
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt");
+                    MessageBox.Show(message, "Még ezt a faszt");
                     txtBoxFirstDriverQual.Clear();
                 }
 
@@ -158,7 +161,7 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt!");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
                     }
                 }
             }
@@ -174,7 +177,7 @@ namespace F1ligapontszamito
 
                 if (res == false)
                 {
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt!");
+                    MessageBox.Show(message, "Még ezt a faszt!");
                 }
                 else
                 {
@@ -261,7 +264,7 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt!");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
                     }
                 }
             }
@@ -277,7 +280,7 @@ namespace F1ligapontszamito
 
                 if (res == false)
                 {
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt!");
+                    MessageBox.Show(message, "Még ezt a faszt!");
                 }
                 else
                 {
@@ -324,11 +327,38 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt!");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
                     }
                 }
             }
         }
+
+        private void txtBoxEngine2ndQual_TextChanged(object sender, EventArgs e)
+        //Gyakorlatilag ugyanazt szeretném elérni, mint feljebb, csak dictionary használatával.
+        //Egyelőre nem működik.
+        {
+            var dic = new Dictionary<int, int>
+                        {
+                            {1, 15}, 
+                            {2, 10},
+                            {3, 8},
+                            {4, 7},
+                            {5, 6},
+                            {6, 5},
+                            {7, 4},
+                            {8, 3},
+                            {9, 2},
+                            {10, 1}
+                          
+                        };
+
+
+            string stringEngine2ndQual = txtBoxEngine2ndQual.Text;
+            int engine2ndQual;
+            var success = int.TryParse(stringEngine2ndQual, out engine2ndQual);
+            pointsEngine2ndQual = success ? dic.SingleOrDefault(r => r.Value == pointsEngine2ndQual).Value : 0;
+
+        }        
         private void txtBoxChasseeQual_TextChanged(object sender, EventArgs e)
         {
             if (txtBoxChasseeQual.TextLength != 0)
@@ -340,7 +370,7 @@ namespace F1ligapontszamito
 
                 if (res == false)
                 {
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt!");
+                    MessageBox.Show(message, "Még ezt a faszt!");
                 }
                 else
                 {
@@ -387,7 +417,7 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt");
                     }
                 }
             }
@@ -402,7 +432,7 @@ namespace F1ligapontszamito
                 bool res = int.TryParse(stringCrewQual, out crewQual);
                 if (res == false)
                 {
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt!");
+                    MessageBox.Show(message, "Még ezt a faszt!");
                 }
                 else
                 {
@@ -449,7 +479,7 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt!");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
                     }
                 }
             }
@@ -465,7 +495,7 @@ namespace F1ligapontszamito
 
                 if (res == false)
                 {
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt!");
+                    MessageBox.Show(message, "Még ezt a faszt!");
                 }
                 else
                 {
@@ -551,7 +581,7 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt!");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
                     }
                 }
             }
@@ -568,7 +598,7 @@ namespace F1ligapontszamito
 
                 if (res == false)
                 {
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt!");
+                    MessageBox.Show(message, "Még ezt a faszt!");
                 }
 
                 else
@@ -656,7 +686,7 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt!");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
                     }
                 }
             }
@@ -671,7 +701,7 @@ namespace F1ligapontszamito
                 bool res = int.TryParse(stringEngineRace, out engineRace);
                 if (res == false)
                 {
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt!");
+                    MessageBox.Show(message, "Még ezt a faszt!");
                 }
                 else
                 {
@@ -758,7 +788,7 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt!");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
                     }
                 }
             }
@@ -773,7 +803,7 @@ namespace F1ligapontszamito
                 bool res = int.TryParse(stringChasseeRace, out chasseeRace);
                 if (res == false)
                 {
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt!");
+                    MessageBox.Show(message, "Még ezt a faszt!");
                 }
                 else
                 {
@@ -861,7 +891,7 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt!");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
                     }
 
                 }
@@ -878,7 +908,7 @@ namespace F1ligapontszamito
                 bool res = int.TryParse(stringCrewRace, out crewRace);
                 if (res == false)
                 {
-                    MessageBox.Show("Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!", "Még ezt a faszt!");
+                    MessageBox.Show(message, "Még ezt a faszt!");
                 }
                 else
                 {
@@ -963,7 +993,7 @@ namespace F1ligapontszamito
                     }
                     else
                     {
-                        MessageBox.Show("Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!", "Még ezt a faszt!");
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
                     }
                 }
             }
@@ -975,7 +1005,7 @@ namespace F1ligapontszamito
 
 
             int finalPoints;
-            finalPoints = pointsDriverQual + pointsDriver2Qual + pointsEngineQual + pointsCrewQual + pointsChasseeQual + pointsDriverRace + pointsDriver2Race + pointsEngineRace + pointsCrewRace + pointsChasseeRace;
+            finalPoints = pointsDriverQual + pointsDriver2Qual + pointsEngineQual + pointsEngine2ndQual + pointsCrewQual + pointsChasseeQual + pointsDriverRace + pointsDriver2Race + pointsEngineRace + pointsCrewRace + pointsChasseeRace;
 
             if (finalPoints <= 80)
             {
@@ -1000,6 +1030,8 @@ namespace F1ligapontszamito
 
 
         }
+
+
 
     }
 }

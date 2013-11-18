@@ -50,6 +50,12 @@
             this.btnDeleteDatas = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtBoxEngine2ndQual = new System.Windows.Forms.TextBox();
+            this.txtBoxChassee2ndQual = new System.Windows.Forms.TextBox();
+            this.txtBoxCrew2ndQual = new System.Windows.Forms.TextBox();
+            this.txtBoxEngine2ndRace = new System.Windows.Forms.TextBox();
+            this.txtBoxChassee2ndRace = new System.Windows.Forms.TextBox();
+            this.txtBoxCrew2ndRace = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCalc
@@ -62,7 +68,7 @@
             this.btnCalc.Location = new System.Drawing.Point(200, 248);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(103, 88);
-            this.btnCalc.TabIndex = 11;
+            this.btnCalc.TabIndex = 17;
             this.btnCalc.Text = "Számítás";
             this.btnCalc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnCalc.UseVisualStyleBackColor = true;
@@ -125,7 +131,7 @@
             // 
             this.txtBoxEngineQual.Location = new System.Drawing.Point(136, 170);
             this.txtBoxEngineQual.Name = "txtBoxEngineQual";
-            this.txtBoxEngineQual.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxEngineQual.Size = new System.Drawing.Size(41, 20);
             this.txtBoxEngineQual.TabIndex = 3;
             this.txtBoxEngineQual.TextChanged += new System.EventHandler(this.txtBoxEngineQual_TextChanged);
             // 
@@ -141,16 +147,16 @@
             // 
             this.txtBoxChasseeQual.Location = new System.Drawing.Point(136, 196);
             this.txtBoxChasseeQual.Name = "txtBoxChasseeQual";
-            this.txtBoxChasseeQual.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxChasseeQual.TabIndex = 4;
+            this.txtBoxChasseeQual.Size = new System.Drawing.Size(41, 20);
+            this.txtBoxChasseeQual.TabIndex = 5;
             this.txtBoxChasseeQual.TextChanged += new System.EventHandler(this.txtBoxChasseeQual_TextChanged);
             // 
             // txtBoxCrewQual
             // 
             this.txtBoxCrewQual.Location = new System.Drawing.Point(136, 222);
             this.txtBoxCrewQual.Name = "txtBoxCrewQual";
-            this.txtBoxCrewQual.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxCrewQual.TabIndex = 5;
+            this.txtBoxCrewQual.Size = new System.Drawing.Size(41, 20);
+            this.txtBoxCrewQual.TabIndex = 7;
             this.txtBoxCrewQual.TextChanged += new System.EventHandler(this.txtBoxCrewQual_TextChanged);
             // 
             // label6
@@ -176,7 +182,7 @@
             this.txtBoxFirstDriverRace.Location = new System.Drawing.Point(263, 120);
             this.txtBoxFirstDriverRace.Name = "txtBoxFirstDriverRace";
             this.txtBoxFirstDriverRace.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxFirstDriverRace.TabIndex = 6;
+            this.txtBoxFirstDriverRace.TabIndex = 9;
             this.txtBoxFirstDriverRace.TextChanged += new System.EventHandler(this.txtBoxFirstDriverRace_TextChanged);
             // 
             // txtBoxSecondDriverRace
@@ -184,31 +190,31 @@
             this.txtBoxSecondDriverRace.Location = new System.Drawing.Point(263, 144);
             this.txtBoxSecondDriverRace.Name = "txtBoxSecondDriverRace";
             this.txtBoxSecondDriverRace.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxSecondDriverRace.TabIndex = 7;
+            this.txtBoxSecondDriverRace.TabIndex = 10;
             this.txtBoxSecondDriverRace.TextChanged += new System.EventHandler(this.txtBoxSecondDriverRace_TextChanged);
             // 
             // txtBoxEngineRace
             // 
             this.txtBoxEngineRace.Location = new System.Drawing.Point(263, 170);
             this.txtBoxEngineRace.Name = "txtBoxEngineRace";
-            this.txtBoxEngineRace.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxEngineRace.TabIndex = 8;
+            this.txtBoxEngineRace.Size = new System.Drawing.Size(40, 20);
+            this.txtBoxEngineRace.TabIndex = 11;
             this.txtBoxEngineRace.TextChanged += new System.EventHandler(this.txtBoxEngineRace_TextChanged);
             // 
             // txtBoxChasseeRace
             // 
             this.txtBoxChasseeRace.Location = new System.Drawing.Point(263, 196);
             this.txtBoxChasseeRace.Name = "txtBoxChasseeRace";
-            this.txtBoxChasseeRace.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxChasseeRace.TabIndex = 9;
+            this.txtBoxChasseeRace.Size = new System.Drawing.Size(40, 20);
+            this.txtBoxChasseeRace.TabIndex = 13;
             this.txtBoxChasseeRace.TextChanged += new System.EventHandler(this.txtBoxChasseeRace_TextChanged);
             // 
             // txtBoxCrewRace
             // 
             this.txtBoxCrewRace.Location = new System.Drawing.Point(263, 222);
             this.txtBoxCrewRace.Name = "txtBoxCrewRace";
-            this.txtBoxCrewRace.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxCrewRace.TabIndex = 10;
+            this.txtBoxCrewRace.Size = new System.Drawing.Size(40, 20);
+            this.txtBoxCrewRace.TabIndex = 15;
             this.txtBoxCrewRace.TextChanged += new System.EventHandler(this.txtBoxCrewRace_TextChanged);
             // 
             // btnDeleteDatas
@@ -216,7 +222,7 @@
             this.btnDeleteDatas.Location = new System.Drawing.Point(12, 266);
             this.btnDeleteDatas.Name = "btnDeleteDatas";
             this.btnDeleteDatas.Size = new System.Drawing.Size(117, 23);
-            this.btnDeleteDatas.TabIndex = 0;
+            this.btnDeleteDatas.TabIndex = 18;
             this.btnDeleteDatas.Text = "Adatok törlése";
             this.btnDeleteDatas.UseVisualStyleBackColor = true;
             this.btnDeleteDatas.Click += new System.EventHandler(this.btnDeleteDatas_Click);
@@ -239,6 +245,48 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "© Balován Bence 2013";
             // 
+            // txtBoxEngine2ndQual
+            // 
+            this.txtBoxEngine2ndQual.Location = new System.Drawing.Point(196, 170);
+            this.txtBoxEngine2ndQual.Name = "txtBoxEngine2ndQual";
+            this.txtBoxEngine2ndQual.Size = new System.Drawing.Size(40, 20);
+            this.txtBoxEngine2ndQual.TabIndex = 4;
+            // 
+            // txtBoxChassee2ndQual
+            // 
+            this.txtBoxChassee2ndQual.Location = new System.Drawing.Point(196, 196);
+            this.txtBoxChassee2ndQual.Name = "txtBoxChassee2ndQual";
+            this.txtBoxChassee2ndQual.Size = new System.Drawing.Size(40, 20);
+            this.txtBoxChassee2ndQual.TabIndex = 6;
+            // 
+            // txtBoxCrew2ndQual
+            // 
+            this.txtBoxCrew2ndQual.Location = new System.Drawing.Point(196, 222);
+            this.txtBoxCrew2ndQual.Name = "txtBoxCrew2ndQual";
+            this.txtBoxCrew2ndQual.Size = new System.Drawing.Size(40, 20);
+            this.txtBoxCrew2ndQual.TabIndex = 8;
+            // 
+            // txtBoxEngine2ndRace
+            // 
+            this.txtBoxEngine2ndRace.Location = new System.Drawing.Point(323, 170);
+            this.txtBoxEngine2ndRace.Name = "txtBoxEngine2ndRace";
+            this.txtBoxEngine2ndRace.Size = new System.Drawing.Size(40, 20);
+            this.txtBoxEngine2ndRace.TabIndex = 12;
+            // 
+            // txtBoxChassee2ndRace
+            // 
+            this.txtBoxChassee2ndRace.Location = new System.Drawing.Point(323, 196);
+            this.txtBoxChassee2ndRace.Name = "txtBoxChassee2ndRace";
+            this.txtBoxChassee2ndRace.Size = new System.Drawing.Size(40, 20);
+            this.txtBoxChassee2ndRace.TabIndex = 14;
+            // 
+            // txtBoxCrew2ndRace
+            // 
+            this.txtBoxCrew2ndRace.Location = new System.Drawing.Point(323, 222);
+            this.txtBoxCrew2ndRace.Name = "txtBoxCrew2ndRace";
+            this.txtBoxCrew2ndRace.Size = new System.Drawing.Size(40, 20);
+            this.txtBoxCrew2ndRace.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +295,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(390, 347);
+            this.Controls.Add(this.txtBoxCrew2ndRace);
+            this.Controls.Add(this.txtBoxChassee2ndRace);
+            this.Controls.Add(this.txtBoxEngine2ndRace);
+            this.Controls.Add(this.txtBoxCrew2ndQual);
+            this.Controls.Add(this.txtBoxChassee2ndQual);
+            this.Controls.Add(this.txtBoxEngine2ndQual);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnDeleteDatas);
@@ -299,6 +353,12 @@
         private System.Windows.Forms.Button btnDeleteDatas;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtBoxEngine2ndQual;
+        private System.Windows.Forms.TextBox txtBoxChassee2ndQual;
+        private System.Windows.Forms.TextBox txtBoxCrew2ndQual;
+        private System.Windows.Forms.TextBox txtBoxEngine2ndRace;
+        private System.Windows.Forms.TextBox txtBoxChassee2ndRace;
+        private System.Windows.Forms.TextBox txtBoxCrew2ndRace;
     }
 }
 
