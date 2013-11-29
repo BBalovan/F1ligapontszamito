@@ -251,6 +251,7 @@
             this.txtBoxEngine2ndQual.Name = "txtBoxEngine2ndQual";
             this.txtBoxEngine2ndQual.Size = new System.Drawing.Size(40, 20);
             this.txtBoxEngine2ndQual.TabIndex = 4;
+            this.txtBoxEngine2ndQual.TextChanged += new System.EventHandler(this.txtBoxEngine2ndQual_TextChanged);
             // 
             // txtBoxChassee2ndQual
             // 

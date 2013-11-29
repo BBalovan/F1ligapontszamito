@@ -356,7 +356,7 @@ namespace F1ligapontszamito
             string stringEngine2ndQual = txtBoxEngine2ndQual.Text;
             int engine2ndQual;
             var success = int.TryParse(stringEngine2ndQual, out engine2ndQual);
-            pointsEngine2ndQual = success ? dic.SingleOrDefault(r => r.Value == pointsEngine2ndQual).Value : 0;
+            pointsEngine2ndQual = success ? dic.SingleOrDefault(r => r.Key == engine2ndQual).Value : 0;
 
         }        
         private void txtBoxChasseeQual_TextChanged(object sender, EventArgs e)
