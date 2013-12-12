@@ -320,6 +320,7 @@ namespace F1ligapontszamito
 
             string stringEngine2ndQual = txtBoxEngine2ndQual.Text;
             int engine2ndQual;
+<<<<<<< HEAD
             bool res = int.TryParse(stringEngine2ndQual, out engine2ndQual);
 
             if (res == false)
@@ -334,6 +335,10 @@ namespace F1ligapontszamito
 
             }
         }
+=======
+            var success = int.TryParse(stringEngine2ndQual, out engine2ndQual);
+            pointsEngine2ndQual = success ? dic.SingleOrDefault(r => r.Key == engine2ndQual).Value : 0;
+>>>>>>> c03264fce4bf40d18af4753c9d75984528aba91e
 
         private void txtBoxChasseeQual_TextChanged(object sender, EventArgs e)
         {
