@@ -315,8 +315,7 @@ namespace F1ligapontszamito
         {
             //Dictionaires.cs ben vannak a dictionary-k-
 
-            Dictionaries d = new Dictionaries();
-            d.GetDic2(); //meghívnám a megfelelő dic-t.
+           
 
             string stringEngine2ndQual = txtBoxEngine2ndQual.Text;
             int engine2ndQual;
@@ -330,7 +329,7 @@ namespace F1ligapontszamito
             {
                 engine2ndQual = int.Parse(txtBoxEngine2ndQual.Text);
                 //és itt meg nem létezik, mert valamit nem értek...
-                pointsEngine2ndQual = dic2.SingleOrDefault(r => r.Key == engine2ndQual).Value;
+                pointsEngine2ndQual = Dictionaries.Dic2.SingleOrDefault(r => r.Key == engine2ndQual).Value;
 
             }
         }

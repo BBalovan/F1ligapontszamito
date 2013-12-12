@@ -5,9 +5,20 @@ using System.Text;
 
 namespace F1ligapontszamito
 {
-    class Dictionaries //Lehet, hogy nem is osztályt kéne használnom?
+    static class Dictionaries //Lehet, hogy nem is osztályt kéne használnom?
     {
-        Dictionary<int, int> dic2 = new Dictionary<int, int>()
+        // Itt nem inicializálunk változót. Ezeknek a konstruktorban a helyük, vagy metódusban, esetleg readonly property get ágában.
+        // Mivel ez nem módosítható kívülről, ezért lehet statuc class, bár nem szokták javasolni, mert nehezen unit tesztelhető. Itt most ezt elnézzük.
+
+        //Ennek adhatnál beszédesebb nevet is. Fél év múlva azt se fogod tudni miért hoztad létre.
+        public static Dictionary<int, int> Dic2 { get; set; }
+
+        public static Dictionary<int, int> Dic1 { get; set; }
+
+        //Static constructurtor.
+        static Dictionaries()
+        {
+            Dic2 = new Dictionary<int, int>()
              {
                             {1, 15}, 
                             {2, 10},
@@ -21,12 +32,8 @@ namespace F1ligapontszamito
                             {10, 1}
                           
               };
-        public System.Collections.Generic.Dictionary<int, int> GetDic2()
-        {
-            return dic2;
-        }
 
-        Dictionary<int, int> dic1 = new Dictionary<int, int>()
+            Dic1 = new Dictionary<int, int>()
                 {
                      {1, 30},
                      {2, 20},
@@ -54,9 +61,6 @@ namespace F1ligapontszamito
                      {24, 0}
     
                  };
-        public System.Collections.Generic.Dictionary<int, int> GetDic1()
-        {
-            return dic1;
         }
     }
 }
