@@ -47,7 +47,7 @@
             this.txtBoxEngineRace = new System.Windows.Forms.TextBox();
             this.txtBoxChasseeRace = new System.Windows.Forms.TextBox();
             this.txtBoxCrewRace = new System.Windows.Forms.TextBox();
-            this.btnDeleteDatas = new System.Windows.Forms.Button();
+            this.btnDeleteData = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBoxEngine2ndQual = new System.Windows.Forms.TextBox();
@@ -217,15 +217,15 @@
             this.txtBoxCrewRace.TabIndex = 15;
             this.txtBoxCrewRace.TextChanged += new System.EventHandler(this.txtBoxCrewRace_TextChanged);
             // 
-            // btnDeleteDatas
+            // btnDeleteData
             // 
-            this.btnDeleteDatas.Location = new System.Drawing.Point(12, 266);
-            this.btnDeleteDatas.Name = "btnDeleteDatas";
-            this.btnDeleteDatas.Size = new System.Drawing.Size(117, 23);
-            this.btnDeleteDatas.TabIndex = 18;
-            this.btnDeleteDatas.Text = "Adatok törlése";
-            this.btnDeleteDatas.UseVisualStyleBackColor = true;
-            this.btnDeleteDatas.Click += new System.EventHandler(this.btnDeleteDatas_Click);
+            this.btnDeleteData.Location = new System.Drawing.Point(12, 266);
+            this.btnDeleteData.Name = "btnDeleteData";
+            this.btnDeleteData.Size = new System.Drawing.Size(117, 23);
+            this.btnDeleteData.TabIndex = 18;
+            this.btnDeleteData.Text = "Adatok törlése";
+            this.btnDeleteData.UseVisualStyleBackColor = true;
+            this.btnDeleteData.Click += new System.EventHandler(this.btnDeleteData_Click_1);
             // 
             // label8
             // 
@@ -251,6 +251,7 @@
             this.txtBoxEngine2ndQual.Name = "txtBoxEngine2ndQual";
             this.txtBoxEngine2ndQual.Size = new System.Drawing.Size(40, 20);
             this.txtBoxEngine2ndQual.TabIndex = 4;
+            this.txtBoxEngine2ndQual.TextChanged += new System.EventHandler(this.txtBoxEngine2ndQual_TextChanged_1);
             // 
             // txtBoxChassee2ndQual
             // 
@@ -303,7 +304,7 @@
             this.Controls.Add(this.txtBoxEngine2ndQual);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btnDeleteDatas);
+            this.Controls.Add(this.btnDeleteData);
             this.Controls.Add(this.txtBoxCrewRace);
             this.Controls.Add(this.txtBoxChasseeRace);
             this.Controls.Add(this.txtBoxEngineRace);
@@ -350,7 +351,7 @@
         private System.Windows.Forms.TextBox txtBoxEngineRace;
         private System.Windows.Forms.TextBox txtBoxChasseeRace;
         private System.Windows.Forms.TextBox txtBoxCrewRace;
-        private System.Windows.Forms.Button btnDeleteDatas;
+        private System.Windows.Forms.Button btnDeleteData;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBoxEngine2ndQual;

@@ -17,6 +17,8 @@ namespace F1ligapontszamito
             // FIGYELEM
             // A kódban idézetek találhatóak az Argo c. magyar filmből. Itt-ott trágár szavakkal, baráti társaságnak készült program!
 
+
+            // Ez az alkalmazás kiszámolja egy népszerű online játékban (F1Liga) szerzett pontokat, így nem kell másnap 0:00-ig várni, ha valaki nagyon kíváncsi.
         }
 
         int pointsDriverQual;
@@ -33,30 +35,6 @@ namespace F1ligapontszamito
         string message = "Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!";
         string szamokat124Ker = "Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!";
 
-        private void btnDeleteDatas_Click(object sender, EventArgs e)
-        {
-            txtBoxChasseeQual.Clear();
-            txtBoxChasseeRace.Clear();
-            txtBoxCrewQual.Clear();
-            txtBoxCrewRace.Clear();
-            txtBoxEngineQual.Clear();
-            txtBoxEngineRace.Clear();
-            txtBoxFirstDriverQual.Clear();
-            txtBoxFirstDriverRace.Clear();
-            txtBoxSecondDriverQual.Clear();
-            txtBoxSecondDriverRace.Clear();
-            pointsDriverQual = 0;
-            pointsDriver2Qual = 0;
-            pointsEngineQual = 0;
-            pointsChasseeQual = 0;
-            pointsCrewQual = 0;
-            pointsDriverRace = 0;
-            pointsDriver2Race = 0;
-            pointsEngineRace = 0;
-            pointsChasseeRace = 0;
-            pointsCrewRace = 0;
-
-        }
 
         private void txtBoxFirstDriverQual_TextChanged(object sender, EventArgs e)
         {
@@ -333,32 +311,30 @@ namespace F1ligapontszamito
             }
         }
 
-        private void txtBoxEngine2ndQual_TextChanged(object sender, EventArgs e)
-        //Gyakorlatilag ugyanazt szeretném elérni, mint feljebb, csak dictionary használatával.
-        //Egyelőre nem működik.
+        private void txtBoxEngine2ndQual_TextChanged_1(object sender, EventArgs e)
         {
-            var dic = new Dictionary<int, int>
-                        {
-                            {1, 15}, 
-                            {2, 10},
-                            {3, 8},
-                            {4, 7},
-                            {5, 6},
-                            {6, 5},
-                            {7, 4},
-                            {8, 3},
-                            {9, 2},
-                            {10, 1}
-                          
-                        };
+            //Dictionaires.cs ben vannak a dictionary-k-
 
+            Dictionaries d = new Dictionaries();
+            d.GetDic2(); //meghívnám a megfelelő dic-t.
 
             string stringEngine2ndQual = txtBoxEngine2ndQual.Text;
             int engine2ndQual;
-            var success = int.TryParse(stringEngine2ndQual, out engine2ndQual);
-            pointsEngine2ndQual = success ? dic.SingleOrDefault(r => r.Value == pointsEngine2ndQual).Value : 0;
+            bool res = int.TryParse(stringEngine2ndQual, out engine2ndQual);
 
-        }        
+            if (res == false)
+            {
+                MessageBox.Show(message, "Még ezt a faszt!");
+            }
+            else
+            {
+                engine2ndQual = int.Parse(txtBoxEngine2ndQual.Text);
+                //és itt meg nem létezik, mert valamit nem értek...
+                pointsEngine2ndQual = dic2.SingleOrDefault(r => r.Key == engine2ndQual).Value;
+
+            }
+        }
+
         private void txtBoxChasseeQual_TextChanged(object sender, EventArgs e)
         {
             if (txtBoxChasseeQual.TextLength != 0)
@@ -1031,7 +1007,37 @@ namespace F1ligapontszamito
 
         }
 
+        private void btnDeleteData_Click_1(object sender, EventArgs e)
+        {
+            txtBoxChasseeQual.Clear();
+            txtBoxChassee2ndQual.Clear();
+            txtBoxChasseeRace.Clear();
+            txtBoxChassee2ndRace.Clear();
+            txtBoxCrewQual.Clear();
+            txtBoxCrew2ndQual.Clear();
+            txtBoxCrewRace.Clear();
+            txtBoxCrew2ndRace.Clear();
+            txtBoxEngineQual.Clear();
+            txtBoxEngine2ndQual.Clear();
+            txtBoxEngineRace.Clear();
+            txtBoxEngine2ndRace.Clear();
+            txtBoxFirstDriverQual.Clear();
+            txtBoxFirstDriverRace.Clear();
+            txtBoxSecondDriverQual.Clear();
+            txtBoxSecondDriverRace.Clear();
+            pointsDriverQual = 0;
+            pointsDriver2Qual = 0;
+            pointsEngineQual = 0;
+            pointsChasseeQual = 0;
+            pointsCrewQual = 0;
+            pointsDriverRace = 0;
+            pointsDriver2Race = 0;
+            pointsEngineRace = 0;
+            pointsChasseeRace = 0;
+            pointsCrewRace = 0;
 
+
+        }
 
     }
 }
