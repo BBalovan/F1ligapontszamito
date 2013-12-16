@@ -26,14 +26,21 @@ namespace F1ligapontszamito
         int pointsEngineQual;
         int pointsEngine2ndQual;
         int pointsChasseeQual;
+        int pointsChassee2ndQual;
         int pointsCrewQual;
+        int pointsCrew2ndQual;           //Ezek a változók tárolják a helyezésekért kapott pontokat, melyet a végén összeadunk.
         int pointsDriverRace;
         int pointsDriver2Race;
         int pointsEngineRace;
+        int pointsEngine2ndRace;
         int pointsChasseeRace;
+        int pointsChassee2ndRace;
         int pointsCrewRace;
-        string message = "Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!";
-        string szamokat124Ker = "Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!";
+        int pointsCrew2ndRace;
+        
+        //Argos idézeteket tároló konstansok
+        const string message = "Mi öten vagyunk, Te meg egyen köcsög! Számot írjál be!";
+        const string szamokat124Ker = "Tibi, ez így nem lesz jó, 1 és 24 közötti számokat írjál be!";
 
 
         private void txtBoxFirstDriverQual_TextChanged(object sender, EventArgs e)
@@ -60,81 +67,7 @@ namespace F1ligapontszamito
 
                     if (firstDriverQual > 0 & firstDriverQual < 25)
                     {
-                        switch (firstDriverQual)
-                        {
-                            case 1:
-                                pointsDriverQual = 30;
-                                break;
-                            case 2:
-                                pointsDriverQual = 20;
-                                break;
-                            case 3:
-                                pointsDriverQual = 18;
-                                break;
-                            case 4:
-                                pointsDriverQual = 16;
-                                break;
-                            case 5:
-                                pointsDriverQual = 15;
-                                break;
-                            case 6:
-                                pointsDriverQual = 14;
-                                break;
-                            case 7:
-                                pointsDriverQual = 13;
-                                break;
-                            case 8:
-                                pointsDriverQual = 12;
-                                break;
-                            case 9:
-                                pointsDriverQual = 11;
-                                break;
-                            case 10:
-                                pointsDriverQual = 10;
-                                break;
-                            case 11:
-                                pointsDriverQual = 9;
-                                break;
-                            case 12:
-                                pointsDriverQual = 8;
-                                break;
-                            case 13:
-                                pointsDriverQual = 7;
-                                break;
-                            case 14:
-                                pointsDriverQual = 6;
-                                break;
-                            case 15:
-                                pointsDriverQual = 5;
-                                break;
-                            case 16:
-                                pointsDriverQual = 4;
-                                break;
-                            case 17:
-                                pointsDriverQual = 4;
-                                break;
-                            case 18:
-                                pointsDriverQual = 3;
-                                break;
-                            case 19:
-                                pointsDriverQual = 3;
-                                break;
-                            case 20:
-                                pointsDriverQual = 2;
-                                break;
-                            case 21:
-                                pointsDriverQual = 2;
-                                break;
-                            case 22:
-                                pointsDriverQual = 1;
-                                break;
-                            case 23:
-                                pointsDriverQual = 1;
-                                break;
-                            case 24:
-                                pointsDriverQual = 0;
-                                break;
-                        }
+                        pointsDriverQual = Dictionaries.QualDriverDic.SingleOrDefault(r => r.Key == firstDriverQual).Value;
 
                     }
                     else
@@ -164,81 +97,7 @@ namespace F1ligapontszamito
 
                     if (secondDriverQual > 0 & secondDriverQual < 25)
                     {
-                        switch (secondDriverQual)
-                        {
-                            case 1:
-                                pointsDriver2Qual = 30;
-                                break;
-                            case 2:
-                                pointsDriver2Qual = 20;
-                                break;
-                            case 3:
-                                pointsDriver2Qual = 18;
-                                break;
-                            case 4:
-                                pointsDriver2Qual = 16;
-                                break;
-                            case 5:
-                                pointsDriver2Qual = 15;
-                                break;
-                            case 6:
-                                pointsDriver2Qual = 14;
-                                break;
-                            case 7:
-                                pointsDriver2Qual = 13;
-                                break;
-                            case 8:
-                                pointsDriver2Qual = 12;
-                                break;
-                            case 9:
-                                pointsDriver2Qual = 11;
-                                break;
-                            case 10:
-                                pointsDriver2Qual = 10;
-                                break;
-                            case 11:
-                                pointsDriver2Qual = 9;
-                                break;
-                            case 12:
-                                pointsDriver2Qual = 8;
-                                break;
-                            case 13:
-                                pointsDriver2Qual = 7;
-                                break;
-                            case 14:
-                                pointsDriver2Qual = 6;
-                                break;
-                            case 15:
-                                pointsDriver2Qual = 5;
-                                break;
-                            case 16:
-                                pointsDriver2Qual = 4;
-                                break;
-                            case 17:
-                                pointsDriver2Qual = 4;
-                                break;
-                            case 18:
-                                pointsDriver2Qual = 3;
-                                break;
-                            case 19:
-                                pointsDriver2Qual = 3;
-                                break;
-                            case 20:
-                                pointsDriver2Qual = 2;
-                                break;
-                            case 21:
-                                pointsDriver2Qual = 2;
-                                break;
-                            case 22:
-                                pointsDriver2Qual = 1;
-                                break;
-                            case 23:
-                                pointsDriver2Qual = 1;
-                                break;
-                            case 24:
-                                pointsDriver2Qual = 0;
-                                break;
-                        }
+                        pointsDriver2Qual = Dictionaries.QualDriverDic.SingleOrDefault(r => r.Key == secondDriverQual).Value;
                     }
                     else
                     {
@@ -247,7 +106,6 @@ namespace F1ligapontszamito
                 }
             }
         }
-
         private void txtBoxEngineQual_TextChanged(object sender, EventArgs e)
         {
             if (txtBoxEngineQual.TextLength != 0)
@@ -266,42 +124,7 @@ namespace F1ligapontszamito
 
                     if (engineQual > 0 & engineQual < 25)
                     {
-                        switch (engineQual)
-                        {
-                            case 1:
-                                pointsEngineQual = 15;
-                                break;
-                            case 2:
-                                pointsEngineQual = 10;
-                                break;
-                            case 3:
-                                pointsEngineQual = 8;
-                                break;
-                            case 4:
-                                pointsEngineQual = 7;
-                                break;
-                            case 5:
-                                pointsEngineQual = 6;
-                                break;
-                            case 6:
-                                pointsEngineQual = 5;
-                                break;
-                            case 7:
-                                pointsEngineQual = 4;
-                                break;
-                            case 8:
-                                pointsEngineQual = 3;
-                                break;
-                            case 9:
-                                pointsEngineQual = 2;
-                                break;
-                            case 10:
-                                pointsEngineQual = 1;
-                                break;
-                            default:
-                                pointsEngineQual = 0;
-                                break;
-                        }
+                        pointsEngineQual = Dictionaries.QualTeamDic.SingleOrDefault(r => r.Key == engineQual).Value;
                     }
                     else
                     {
@@ -310,13 +133,9 @@ namespace F1ligapontszamito
                 }
             }
         }
-
         private void txtBoxEngine2ndQual_TextChanged_1(object sender, EventArgs e)
         {
-            //Dictionaires.cs ben vannak a dictionary-k-
-
            
-
             string stringEngine2ndQual = txtBoxEngine2ndQual.Text;
             int engine2ndQual;
             bool res = int.TryParse(stringEngine2ndQual, out engine2ndQual);
@@ -328,12 +147,16 @@ namespace F1ligapontszamito
             else
             {
                 engine2ndQual = int.Parse(txtBoxEngine2ndQual.Text);
-                //és itt meg nem létezik, mert valamit nem értek...
-                pointsEngine2ndQual = Dictionaries.Dic2.SingleOrDefault(r => r.Key == engine2ndQual).Value;
-
+                if (engine2ndQual > 0 & engine2ndQual < 25)
+                {
+                    pointsEngine2ndQual = Dictionaries.QualTeamDic.SingleOrDefault(r => r.Key == engine2ndQual).Value;
+                }
+                else
+                {
+                    MessageBox.Show(szamokat124Ker, "Még ezt a faszt");
+                }
             }
         }
-
         private void txtBoxChasseeQual_TextChanged(object sender, EventArgs e)
         {
             if (txtBoxChasseeQual.TextLength != 0)
@@ -353,42 +176,35 @@ namespace F1ligapontszamito
 
                     if (chasseeQual > 0 & chasseeQual < 25)
                     {
-                        switch (chasseeQual)
-                        {
-                            case 1:
-                                pointsChasseeQual = 15;
-                                break;
-                            case 2:
-                                pointsChasseeQual = 10;
-                                break;
-                            case 3:
-                                pointsChasseeQual = 8;
-                                break;
-                            case 4:
-                                pointsChasseeQual = 7;
-                                break;
-                            case 5:
-                                pointsChasseeQual = 6;
-                                break;
-                            case 6:
-                                pointsChasseeQual = 5;
-                                break;
-                            case 7:
-                                pointsChasseeQual = 4;
-                                break;
-                            case 8:
-                                pointsChasseeQual = 3;
-                                break;
-                            case 9:
-                                pointsChasseeQual = 2;
-                                break;
-                            case 10:
-                                pointsChasseeQual = 1;
-                                break;
-                            default:
-                                pointsChasseeQual = 0;
-                                break;
-                        }
+                        pointsChasseeQual = Dictionaries.QualTeamDic.SingleOrDefault(r => r.Key == chasseeQual).Value;
+                    }
+                    else
+                    {
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt");
+                    }
+                }
+            }
+        }
+        private void txtBoxChassee2ndQual_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxChassee2ndQual.TextLength != 0)
+            {
+
+                int chassee2ndQual;
+                string stringChassee2ndQual = txtBoxChassee2ndQual.Text;
+                bool res = int.TryParse(stringChassee2ndQual, out chassee2ndQual);
+
+                if (res == false)
+                {
+                    MessageBox.Show(message, "Még ezt a faszt!");
+                }
+                else
+                {
+                    chassee2ndQual = int.Parse(txtBoxChassee2ndQual.Text);
+
+                    if (chassee2ndQual > 0 & chassee2ndQual < 25)
+                    {
+                        pointsChassee2ndQual = Dictionaries.QualTeamDic.SingleOrDefault(r => r.Key == chassee2ndQual).Value;
                     }
                     else
                     {
@@ -415,42 +231,7 @@ namespace F1ligapontszamito
 
                     if (crewQual > 0 & crewQual < 25)
                     {
-                        switch (crewQual)
-                        {
-                            case 1:
-                                pointsCrewQual = 15;
-                                break;
-                            case 2:
-                                pointsCrewQual = 10;
-                                break;
-                            case 3:
-                                pointsCrewQual = 8;
-                                break;
-                            case 4:
-                                pointsCrewQual = 7;
-                                break;
-                            case 5:
-                                pointsCrewQual = 6;
-                                break;
-                            case 6:
-                                pointsCrewQual = 5;
-                                break;
-                            case 7:
-                                pointsCrewQual = 4;
-                                break;
-                            case 8:
-                                pointsCrewQual = 3;
-                                break;
-                            case 9:
-                                pointsCrewQual = 2;
-                                break;
-                            case 10:
-                                pointsCrewQual = 1;
-                                break;
-                            default:
-                                pointsCrewQual = 0;
-                                break;
-                        }
+                        pointsCrewQual = Dictionaries.QualTeamDic.SingleOrDefault(r => r.Key == crewQual).Value;
                     }
                     else
                     {
@@ -459,7 +240,33 @@ namespace F1ligapontszamito
                 }
             }
         }
+        private void txtBoxCrew2ndQual_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxCrew2ndQual.TextLength != 0)
+            {
 
+                int crew2ndQual;
+                string stringCrew2ndQual = txtBoxCrew2ndQual.Text;
+                bool res = int.TryParse(stringCrew2ndQual, out crew2ndQual);
+                if (res == false)
+                {
+                    MessageBox.Show(message, "Még ezt a faszt!");
+                }
+                else
+                {
+                    crew2ndQual = int.Parse(txtBoxCrew2ndQual.Text);
+
+                    if (crew2ndQual > 0 & crew2ndQual < 25)
+                    {
+                        pointsCrew2ndQual = Dictionaries.QualTeamDic.SingleOrDefault(r => r.Key == crew2ndQual).Value;
+                    }
+                    else
+                    {
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
+                    }
+                }
+            }
+        }
         private void txtBoxFirstDriverRace_TextChanged(object sender, EventArgs e)
         {
             if (txtBoxFirstDriverRace.TextLength != 0)
@@ -478,81 +285,8 @@ namespace F1ligapontszamito
 
                     if (firstDriverRace > 0 & firstDriverRace < 25)
                     {
-                        switch (firstDriverRace)
-                        {
-                            case 1:
-                                pointsDriverRace = 100;
-                                break;
-                            case 2:
-                                pointsDriverRace = 80;
-                                break;
-                            case 3:
-                                pointsDriverRace = 70;
-                                break;
-                            case 4:
-                                pointsDriverRace = 60;
-                                break;
-                            case 5:
-                                pointsDriverRace = 50;
-                                break;
-                            case 6:
-                                pointsDriverRace = 40;
-                                break;
-                            case 7:
-                                pointsDriverRace = 30;
-                                break;
-                            case 8:
-                                pointsDriverRace = 25;
-                                break;
-                            case 9:
-                                pointsDriverRace = 20;
-                                break;
-                            case 10:
-                                pointsDriverRace = 15;
-                                break;
-                            case 11:
-                                pointsDriverRace = 13;
-                                break;
-                            case 12:
-                                pointsDriverRace = 10;
-                                break;
-                            case 13:
-                                pointsDriverRace = 8;
-                                break;
-                            case 14:
-                                pointsDriverRace = 6;
-                                break;
-                            case 15:
-                                pointsDriverRace = 5;
-                                break;
-                            case 16:
-                                pointsDriverRace = 4;
-                                break;
-                            case 17:
-                                pointsDriverRace = 4;
-                                break;
-                            case 18:
-                                pointsDriverRace = 3;
-                                break;
-                            case 19:
-                                pointsDriverRace = 3;
-                                break;
-                            case 20:
-                                pointsDriverRace = 2;
-                                break;
-                            case 21:
-                                pointsDriverRace = 2;
-                                break;
-                            case 22:
-                                pointsDriverRace = 1;
-                                break;
-                            case 23:
-                                pointsDriverRace = 1;
-                                break;
-                            case 24:
-                                pointsDriverRace = 0;
-                                break;
-                        }
+
+                        pointsDriverRace = Dictionaries.RaceDriverDic.SingleOrDefault(r => r.Key == firstDriverRace).Value;
                     }
                     else
                     {
@@ -561,7 +295,6 @@ namespace F1ligapontszamito
                 }
             }
         }
-
         private void txtBoxSecondDriverRace_TextChanged(object sender, EventArgs e)
         {
             if (txtBoxSecondDriverRace.TextLength != 0)
@@ -583,81 +316,7 @@ namespace F1ligapontszamito
 
                     if (secondDriverRace > 0 & secondDriverRace < 25)
                     {
-                        switch (secondDriverRace)
-                        {
-                            case 1:
-                                pointsDriver2Race = 100;
-                                break;
-                            case 2:
-                                pointsDriver2Race = 80;
-                                break;
-                            case 3:
-                                pointsDriver2Race = 70;
-                                break;
-                            case 4:
-                                pointsDriver2Race = 60;
-                                break;
-                            case 5:
-                                pointsDriver2Race = 50;
-                                break;
-                            case 6:
-                                pointsDriver2Race = 40;
-                                break;
-                            case 7:
-                                pointsDriver2Race = 30;
-                                break;
-                            case 8:
-                                pointsDriver2Race = 25;
-                                break;
-                            case 9:
-                                pointsDriver2Race = 20;
-                                break;
-                            case 10:
-                                pointsDriver2Race = 15;
-                                break;
-                            case 11:
-                                pointsDriver2Race = 13;
-                                break;
-                            case 12:
-                                pointsDriver2Race = 10;
-                                break;
-                            case 13:
-                                pointsDriver2Race = 8;
-                                break;
-                            case 14:
-                                pointsDriver2Race = 6;
-                                break;
-                            case 15:
-                                pointsDriver2Race = 5;
-                                break;
-                            case 16:
-                                pointsDriver2Race = 4;
-                                break;
-                            case 17:
-                                pointsDriver2Race = 4;
-                                break;
-                            case 18:
-                                pointsDriver2Race = 3;
-                                break;
-                            case 19:
-                                pointsDriver2Race = 3;
-                                break;
-                            case 20:
-                                pointsDriver2Race = 2;
-                                break;
-                            case 21:
-                                pointsDriver2Race = 2;
-                                break;
-                            case 22:
-                                pointsDriver2Race = 1;
-                                break;
-                            case 23:
-                                pointsDriver2Race = 1;
-                                break;
-                            case 24:
-                                pointsDriver2Race = 0;
-                                break;
-                        }
+                        pointsDriver2Race = Dictionaries.RaceDriverDic.SingleOrDefault(r => r.Key == secondDriverRace).Value;
                     }
                     else
                     {
@@ -685,81 +344,35 @@ namespace F1ligapontszamito
 
                     if (engineRace > 0 & engineRace < 25)
                     {
-                        switch (engineRace)
-                        {
-                            case 1:
-                                pointsEngineRace = 45;
-                                break;
-                            case 2:
-                                pointsEngineRace = 35;
-                                break;
-                            case 3:
-                                pointsEngineRace = 30;
-                                break;
-                            case 4:
-                                pointsEngineRace = 26;
-                                break;
-                            case 5:
-                                pointsEngineRace = 24;
-                                break;
-                            case 6:
-                                pointsEngineRace = 22;
-                                break;
-                            case 7:
-                                pointsEngineRace = 20;
-                                break;
-                            case 8:
-                                pointsEngineRace = 18;
-                                break;
-                            case 9:
-                                pointsEngineRace = 16;
-                                break;
-                            case 10:
-                                pointsEngineRace = 14;
-                                break;
-                            case 11:
-                                pointsEngineRace = 12;
-                                break;
-                            case 12:
-                                pointsEngineRace = 10;
-                                break;
-                            case 13:
-                                pointsEngineRace = 8;
-                                break;
-                            case 14:
-                                pointsEngineRace = 6;
-                                break;
-                            case 15:
-                                pointsEngineRace = 5;
-                                break;
-                            case 16:
-                                pointsEngineRace = 4;
-                                break;
-                            case 17:
-                                pointsEngineRace = 4;
-                                break;
-                            case 18:
-                                pointsEngineRace = 3;
-                                break;
-                            case 19:
-                                pointsEngineRace = 3;
-                                break;
-                            case 20:
-                                pointsEngineRace = 2;
-                                break;
-                            case 21:
-                                pointsEngineRace = 2;
-                                break;
-                            case 22:
-                                pointsEngineRace = 1;
-                                break;
-                            case 23:
-                                pointsEngineRace = 1;
-                                break;
-                            case 24:
-                                pointsEngineRace = 0;
-                                break;
-                        }
+                        pointsEngineRace = Dictionaries.RaceTeamDic.SingleOrDefault(r => r.Key == engineRace).Value;
+                    }
+                    else
+                    {
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
+                    }
+                }
+            }
+        }
+        private void txtBoxEngine2ndRace_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxEngine2ndRace.TextLength != 0)
+            {
+
+                int engine2ndRace;
+                string stringEngine2ndRace = txtBoxEngine2ndRace.Text;
+                bool res = int.TryParse(stringEngine2ndRace, out engine2ndRace);
+                if (res == false)
+                {
+                    MessageBox.Show(message, "Még ezt a faszt!");
+                }
+                else
+                {
+
+                    engine2ndRace = int.Parse(txtBoxEngineRace.Text);
+
+                    if (engine2ndRace > 0 & engine2ndRace < 25)
+                    {
+                        pointsEngine2ndRace = Dictionaries.RaceTeamDic.SingleOrDefault(r => r.Key == engine2ndRace).Value;
                     }
                     else
                     {
@@ -788,81 +401,7 @@ namespace F1ligapontszamito
                     if (chasseeRace > 0 & chasseeRace < 25)
                     {
 
-                        switch (chasseeRace)
-                        {
-                            case 1:
-                                pointsChasseeRace = 45;
-                                break;
-                            case 2:
-                                pointsChasseeRace = 35;
-                                break;
-                            case 3:
-                                pointsChasseeRace = 30;
-                                break;
-                            case 4:
-                                pointsChasseeRace = 26;
-                                break;
-                            case 5:
-                                pointsChasseeRace = 24;
-                                break;
-                            case 6:
-                                pointsChasseeRace = 22;
-                                break;
-                            case 7:
-                                pointsChasseeRace = 20;
-                                break;
-                            case 8:
-                                pointsChasseeRace = 18;
-                                break;
-                            case 9:
-                                pointsChasseeRace = 16;
-                                break;
-                            case 10:
-                                pointsChasseeRace = 14;
-                                break;
-                            case 11:
-                                pointsChasseeRace = 12;
-                                break;
-                            case 12:
-                                pointsChasseeRace = 10;
-                                break;
-                            case 13:
-                                pointsChasseeRace = 8;
-                                break;
-                            case 14:
-                                pointsChasseeRace = 6;
-                                break;
-                            case 15:
-                                pointsChasseeRace = 5;
-                                break;
-                            case 16:
-                                pointsChasseeRace = 4;
-                                break;
-                            case 17:
-                                pointsChasseeRace = 4;
-                                break;
-                            case 18:
-                                pointsChasseeRace = 3;
-                                break;
-                            case 19:
-                                pointsChasseeRace = 3;
-                                break;
-                            case 20:
-                                pointsChasseeRace = 2;
-                                break;
-                            case 21:
-                                pointsChasseeRace = 2;
-                                break;
-                            case 22:
-                                pointsChasseeRace = 1;
-                                break;
-                            case 23:
-                                pointsChasseeRace = 1;
-                                break;
-                            case 24:
-                                pointsChasseeRace = 0;
-                                break;
-                        }
+                        pointsChasseeRace = Dictionaries.RaceTeamDic.SingleOrDefault(r => r.Key == chasseeRace).Value;
                     }
                     else
                     {
@@ -872,7 +411,36 @@ namespace F1ligapontszamito
                 }
             }
         }
+        private void txtBoxChassee2ndRace_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxChassee2ndRace.TextLength != 0)
+            {
 
+                string stringChassee2ndRace = txtBoxChassee2ndRace.Text;
+                int chassee2ndRace;
+                bool res = int.TryParse(stringChassee2ndRace, out chassee2ndRace);
+                if (res == false)
+                {
+                    MessageBox.Show(message, "Még ezt a faszt!");
+                }
+                else
+                {
+
+                    chassee2ndRace = int.Parse(txtBoxChassee2ndRace.Text);
+
+                    if (chassee2ndRace > 0 & chassee2ndRace < 25)
+                    {
+
+                        pointsChassee2ndRace = Dictionaries.RaceTeamDic.SingleOrDefault(r => r.Key == chassee2ndRace).Value;
+                    }
+                    else
+                    {
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
+                    }
+
+                }
+            }
+        }
         private void txtBoxCrewRace_TextChanged(object sender, EventArgs e)
         {
             if (txtBoxCrewRace.TextLength != 0)
@@ -890,81 +458,33 @@ namespace F1ligapontszamito
                     crewRace = int.Parse(txtBoxCrewRace.Text);
                     if (crewRace > 0 & crewRace < 25)
                     {
-                        switch (crewRace)
-                        {
-                            case 1:
-                                pointsCrewRace = 45;
-                                break;
-                            case 2:
-                                pointsCrewRace = 35;
-                                break;
-                            case 3:
-                                pointsCrewRace = 30;
-                                break;
-                            case 4:
-                                pointsCrewRace = 26;
-                                break;
-                            case 5:
-                                pointsCrewRace = 24;
-                                break;
-                            case 6:
-                                pointsCrewRace = 22;
-                                break;
-                            case 7:
-                                pointsCrewRace = 20;
-                                break;
-                            case 8:
-                                pointsCrewRace = 18;
-                                break;
-                            case 9:
-                                pointsCrewRace = 16;
-                                break;
-                            case 10:
-                                pointsCrewRace = 14;
-                                break;
-                            case 11:
-                                pointsCrewRace = 12;
-                                break;
-                            case 12:
-                                pointsCrewRace = 10;
-                                break;
-                            case 13:
-                                pointsCrewRace = 8;
-                                break;
-                            case 14:
-                                pointsCrewRace = 6;
-                                break;
-                            case 15:
-                                pointsCrewRace = 5;
-                                break;
-                            case 16:
-                                pointsCrewRace = 4;
-                                break;
-                            case 17:
-                                pointsCrewRace = 4;
-                                break;
-                            case 18:
-                                pointsCrewRace = 3;
-                                break;
-                            case 19:
-                                pointsCrewRace = 3;
-                                break;
-                            case 20:
-                                pointsCrewRace = 2;
-                                break;
-                            case 21:
-                                pointsCrewRace = 2;
-                                break;
-                            case 22:
-                                pointsCrewRace = 1;
-                                break;
-                            case 23:
-                                pointsCrewRace = 1;
-                                break;
-                            case 24:
-                                pointsCrewRace = 0;
-                                break;
-                        }
+                        pointsCrewRace = Dictionaries.RaceTeamDic.SingleOrDefault(r => r.Key == crewRace).Value;
+                    }
+                    else
+                    {
+                        MessageBox.Show(szamokat124Ker, "Még ezt a faszt!");
+                    }
+                }
+            }
+        }
+        private void txtBoxCrew2ndRace_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxCrew2ndRace.TextLength != 0)
+            {
+                string stringCrew2ndRace = txtBoxCrew2ndRace.Text;
+
+                int crew2ndRace;
+                bool res = int.TryParse(stringCrew2ndRace, out crew2ndRace);
+                if (res == false)
+                {
+                    MessageBox.Show(message, "Még ezt a faszt!");
+                }
+                else
+                {
+                    crew2ndRace = int.Parse(txtBoxCrew2ndRace.Text);
+                    if (crew2ndRace > 0 & crew2ndRace < 25)
+                    {
+                        pointsCrew2ndRace = Dictionaries.RaceTeamDic.SingleOrDefault(r => r.Key == crew2ndRace).Value;
                     }
                     else
                     {
@@ -980,7 +500,7 @@ namespace F1ligapontszamito
 
 
             int finalPoints;
-            finalPoints = pointsDriverQual + pointsDriver2Qual + pointsEngineQual + pointsEngine2ndQual + pointsCrewQual + pointsChasseeQual + pointsDriverRace + pointsDriver2Race + pointsEngineRace + pointsCrewRace + pointsChasseeRace;
+            finalPoints = pointsDriverQual + pointsDriver2Qual + pointsEngineQual + pointsEngine2ndQual + pointsCrewQual + pointsCrew2ndQual + pointsChasseeQual + pointsChassee2ndQual +pointsDriverRace + pointsDriver2Race + pointsEngineRace + pointsEngine2ndRace + pointsCrewRace + pointsCrew2ndRace + pointsChasseeRace + pointsChassee2ndRace;
 
             if (finalPoints <= 80)
             {
@@ -1027,16 +547,21 @@ namespace F1ligapontszamito
             pointsDriverQual = 0;
             pointsDriver2Qual = 0;
             pointsEngineQual = 0;
+            pointsEngine2ndQual = 0;
             pointsChasseeQual = 0;
+            pointsChassee2ndQual = 0;
             pointsCrewQual = 0;
+            pointsCrew2ndQual = 0;
             pointsDriverRace = 0;
             pointsDriver2Race = 0;
             pointsEngineRace = 0;
+            pointsEngine2ndRace = 0;
             pointsChasseeRace = 0;
+            pointsChassee2ndRace = 0;
             pointsCrewRace = 0;
+            pointsCrew2ndRace = 0;
 
 
         }
-
     }
 }

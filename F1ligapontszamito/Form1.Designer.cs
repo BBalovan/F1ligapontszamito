@@ -259,6 +259,7 @@
             this.txtBoxChassee2ndQual.Name = "txtBoxChassee2ndQual";
             this.txtBoxChassee2ndQual.Size = new System.Drawing.Size(40, 20);
             this.txtBoxChassee2ndQual.TabIndex = 6;
+            this.txtBoxChassee2ndQual.TextChanged += new System.EventHandler(this.txtBoxChassee2ndQual_TextChanged);
             // 
             // txtBoxCrew2ndQual
             // 
@@ -266,6 +267,7 @@
             this.txtBoxCrew2ndQual.Name = "txtBoxCrew2ndQual";
             this.txtBoxCrew2ndQual.Size = new System.Drawing.Size(40, 20);
             this.txtBoxCrew2ndQual.TabIndex = 8;
+            this.txtBoxCrew2ndQual.TextChanged += new System.EventHandler(this.txtBoxCrew2ndQual_TextChanged);
             // 
             // txtBoxEngine2ndRace
             // 
@@ -273,6 +275,7 @@
             this.txtBoxEngine2ndRace.Name = "txtBoxEngine2ndRace";
             this.txtBoxEngine2ndRace.Size = new System.Drawing.Size(40, 20);
             this.txtBoxEngine2ndRace.TabIndex = 12;
+            this.txtBoxEngine2ndRace.TextChanged += new System.EventHandler(this.txtBoxEngine2ndRace_TextChanged);
             // 
             // txtBoxChassee2ndRace
             // 
@@ -280,6 +283,7 @@
             this.txtBoxChassee2ndRace.Name = "txtBoxChassee2ndRace";
             this.txtBoxChassee2ndRace.Size = new System.Drawing.Size(40, 20);
             this.txtBoxChassee2ndRace.TabIndex = 14;
+            this.txtBoxChassee2ndRace.TextChanged += new System.EventHandler(this.txtBoxChassee2ndRace_TextChanged);
             // 
             // txtBoxCrew2ndRace
             // 
@@ -287,6 +291,7 @@
             this.txtBoxCrew2ndRace.Name = "txtBoxCrew2ndRace";
             this.txtBoxCrew2ndRace.Size = new System.Drawing.Size(40, 20);
             this.txtBoxCrew2ndRace.TabIndex = 16;
+            this.txtBoxCrew2ndRace.TextChanged += new System.EventHandler(this.txtBoxCrew2ndRace_TextChanged);
             // 
             // Form1
             // 
